@@ -1,0 +1,32 @@
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\CalculatinExpenses.exe.config
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\CalculatinExpenses.exe
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\CalculatinExpenses.pdb
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\MVVM\View\Main.g.cs
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\App.g.cs
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses_MarkupCompile.cache
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses_MarkupCompile.lref
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\MVVM\View\Main.baml
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.g.resources
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.Properties.Resources.resources
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.csproj.GenerateResource.Cache
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.exe
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.pdb
+c:\users\eliorgaming\documents\visual studio 2015\Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.csprojResolveAssemblyReference.cache
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\CalculatinExpenses.exe.config
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.exe
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.pdb
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\CalculatinExpenses.exe
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\CalculatinExpenses.pdb
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\MVVM\View\Main.g.cs
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\App.g.cs
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses_MarkupCompile.cache
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses_MarkupCompile.lref
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\MVVM\View\Main.baml
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.g.resources
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.Properties.Resources.resources
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.csproj.GenerateResource.Cache
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\ConfigurationXml\XMLFile1.xml
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\bin\Debug\ConfigurationXml\ExpensesConfiguration.xml
+C:\Users\ekeren\Documents\Elior Projects\CalculatinExpenses\CalculatinExpenses\obj\Debug\CalculatinExpenses.csprojResolveAssemblyReference.cache

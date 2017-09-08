@@ -1,0 +1,197 @@
+﻿<Window x:Class="CalculatinExpenses.MVVM.View.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatinExpenses.MVVM.View"
+        xmlns:viewModel="clr-namespace:CalculatinExpenses.MVVM.ViewModel"
+        xmlns:converters="clr-namespace:CalculatinExpenses.Converters"
+        mc:Ignorable="d"
+        Title="Main" 
+        Height="1000" 
+        Width="1300"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft">
+
+    <Window.DataContext>
+        <viewModel:ItemControlViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <converters:CategoryToColorConverter x:Key="categoryToColorConvert" />
+        <converters:CategoryToVisibilityConverter x:Key="categoryToVisibilityConverter" />
+        <converters:AddingCategoryAndBussinesConverter x:Key="addingCategoryAndBussinesConverter" />
+    </Window.Resources>
+
+    <Grid Background="LightSkyBlue" Grid.IsSharedSizeScope ="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Name="itemsControlGrid" Grid.Column="0" Grid.Row="0" Margin="3" Grid.IsSharedSizeScope="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="col1" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="col2" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="col3" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="col4" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="col5" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="col6" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="col7" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="תאריך" Margin="5,0" FontWeight="Bold" />
+                <TextBlock Grid.Column="1" Text="שם העסק" Margin="5,0" FontWeight="Bold" />
+                <TextBlock Grid.Column="2" Text="סכום העסקה" Margin="5,0" FontWeight="Bold" />
+                <TextBlock Grid.Column="3" Text="סכון החיוב"  Margin="5,0" FontWeight="Bold" />
+                <TextBlock Grid.Column="4" Text="הערות" Margin="5,0" FontWeight="Bold" />
+                <TextBlock Grid.Column="5" Text="קטגוריה" Margin="5,0" FontWeight="Bold" />
+                <TextBlock Grid.Column="6" Margin="5,0" FontWeight="Bold" />
+            </Grid>
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" Grid.Column="0" Grid.Row="1" FlowDirection="RightToLeft" Height="459">
+                <ItemsControl x:Name="itemsControl" ItemsSource="{Binding Items}" Grid.Column="0" Grid.Row="1" Background="Aqua">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="1" BorderBrush="Black">
+                                <Grid  FlowDirection="RightToLeft" Background="{Binding Category, Converter={StaticResource categoryToColorConvert}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="col1" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="col2" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="col3" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="col4" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="col5" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="col6" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="col7" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Date}" Margin="5,0"/>
+                                    <TextBlock Name="bussinesName" Grid.Column="1" Text="{Binding BusineesName}" Margin="5,0"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding TransactionSum}" Margin="5,0"/>
+                                    <TextBlock Grid.Column="3" Text="{Binding BillingAmount}"  Margin="5,0"/>
+                                    <TextBlock Grid.Column="4" Text="{Binding Remarks}" Margin="5,0" FlowDirection="RightToLeft"/>
+                                    <TextBlock Grid.Column="5" Text="{Binding Category}" Margin="5,0" />
+                                    <ComboBox Grid.Column="5" 
+                                              Name="cmbBoxCategores"
+                                              Visibility="{Binding Category, Converter={StaticResource categoryToVisibilityConverter}}" 
+                                              Margin="5,0" 
+                                              Padding="0">
+                                        <ComboBoxItem Content="בהצדעה"/>
+                                        <ComboBoxItem Content="הלבשה"/>
+                                        <ComboBoxItem Content="אוכל"/>
+                                        <ComboBoxItem Content="דלק"/>
+                                        <ComboBoxItem Content="אחר"/>
+                                        <ComboBoxItem Content="בחוץ"/>
+                                    </ComboBox>
+                                    <Button Grid.Column="6"
+                                            Visibility="{Binding Category, Converter={StaticResource categoryToVisibilityConverter}}" 
+                                            Content="הוסף קטגוריה" 
+                                            Margin="5,0" 
+                                            Padding="0" FontSize="11"
+                                            Command="{Binding AddCategory}">
+
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=cmbBoxCategores, Path=SelectedItem}" Value="{x:Null}">
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <Button.CommandParameter>
+                                            <MultiBinding Converter="{StaticResource addingCategoryAndBussinesConverter}">
+                                                <Binding ElementName="bussinesName" Path="Text" />
+                                                <Binding ElementName="cmbBoxCategores" Path="SelectedItem.Content" />
+                                                <Binding ElementName="itemsControl" Path="Items" />
+                                            </MultiBinding>
+                                        </Button.CommandParameter>
+
+                                    </Button>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Name="ParseNewText" Grid.Column="1" Grid.Row="0" Margin="3">
+            <TextBox AcceptsReturn="True" TextWrapping="Wrap" AcceptsTab="True">
+                
+            </TextBox>
+            
+        </Grid>
+        <Grid Name="Calculation" Grid.Column="0" Grid.Row="1" Margin="3" Grid.IsSharedSizeScope="True">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button Content="חשב סכומים" Grid.Row="0" Margin="0,10" HorizontalAlignment="Center" Command="{Binding CalculateSections}">
+            </Button>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="אוכל" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Text="דלק" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="5" Text="בחוץ" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="7" Text="הלבשה"  FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="9" Text="בהצדעה" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="11" Text="אחר" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="פירוט" FontWeight="Bold" Margin="10,0"/>
+                <TextBlock Grid.Column="1" Grid.Row="3" Text="פירוט" FontWeight="Bold" Margin="10,0"/>
+                <TextBlock Grid.Column="1" Grid.Row="5" Text="פירוט" FontWeight="Bold" Margin="10,0"/>
+                <TextBlock Grid.Column="1" Grid.Row="7" Text="פירוט" FontWeight="Bold" Margin="10,0"/>
+                <TextBlock Grid.Column="1" Grid.Row="9" Text="פירוט" FontWeight="Bold" Margin="10,0"/>
+                <TextBlock Grid.Column="1" Grid.Row="11" Text="פירוט" FontWeight="Bold" Margin="10,0"/>
+
+                <TextBox Grid.Column="0" Grid.Row="2" Text="{Binding FoodSum, StringFormat=N2}" IsReadOnly="True" Margin="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDoubleClick="TextBox_MouseDoubleClick"/>
+                <TextBox Grid.Column="0" Grid.Row="4" Text="{Binding FuelSum, StringFormat=N2}" IsReadOnly="True" Margin="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDoubleClick="TextBox_MouseDoubleClick"/>
+                <TextBox Grid.Column="0" Grid.Row="6" Text="{Binding ResturantsSum, StringFormat=N2}" IsReadOnly="True" Margin="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDoubleClick="TextBox_MouseDoubleClick"/>
+                <TextBox Grid.Column="0" Grid.Row="8" Text="{Binding ClothsSum, StringFormat=N2}" IsReadOnly="True" Margin="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDoubleClick="TextBox_MouseDoubleClick"/>
+                <TextBox Grid.Column="0" Grid.Row="10" Text="{Binding BehatsdaaSum, StringFormat=N2}" IsReadOnly="True" Margin="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDoubleClick="TextBox_MouseDoubleClick"/>
+                <TextBox Grid.Column="0" Grid.Row="12" Text="{Binding OthersSum, StringFormat=N2}" IsReadOnly="True" Margin="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDoubleClick="TextBox_MouseDoubleClick"/>
+
+                <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding FoodSumText}" IsReadOnly="True" Margin="10" FontWeight="Bold" MouseDoubleClick="TextBox_MouseDoubleClick" />
+                <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding FuelSumText}" IsReadOnly="True" Margin="10" FontWeight="Bold" MouseDoubleClick="TextBox_MouseDoubleClick" />
+                <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding ResturantsSumText}" IsReadOnly="True" Margin="10" FontWeight="Bold" MouseDoubleClick="TextBox_MouseDoubleClick" />
+                <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding ClothsSumText}" IsReadOnly="True" Margin="10" FontWeight="Bold" MouseDoubleClick="TextBox_MouseDoubleClick" />
+                <TextBox Grid.Column="1" Grid.Row="10" Text="{Binding BehatsdaaSumText}" IsReadOnly="True" Margin="10" FontWeight="Bold" MouseDoubleClick="TextBox_MouseDoubleClick" />
+                <TextBox Grid.Column="1" Grid.Row="12" Text="{Binding OthersSumText}" IsReadOnly="True" Margin="10" FontWeight="Bold" MouseDoubleClick="TextBox_MouseDoubleClick" />
+            </Grid>
+        </Grid>
+        <Grid Name="Options" Grid.Column="1" Grid.Row="1" Margin="3" Grid.IsSharedSizeScope="True">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="פתח קובץ הוצאות" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding OpenExpensesFile}"/>
+                <Button Content="אתחל טבלאות" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding RestartAll}"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
