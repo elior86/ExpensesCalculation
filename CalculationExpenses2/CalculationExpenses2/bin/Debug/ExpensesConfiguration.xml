@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Features>
+  <Categories>
+    <category>בהצדעה</category>
+    <category>הלבשה</category>
+    <category>אוכל</category>
+    <category>דלק</category>
+    <category>אחר</category>
+    <category>בחוץ</category>
+  </Categories>
+  <CategoriesAndBusiness>
+    <CategoryBusiness>
+      <HebrewName>בהצדעה</HebrewName>
+      <EnglishName>behatsdaa</EnglishName>
+      <BusinessNames>בהצדעה,</BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>הלבשה</HebrewName>
+      <EnglishName>cloths</EnglishName>
+      <BusinessNames>
+      </BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>אוכל</HebrewName>
+      <EnglishName>food</EnglishName>
+      <BusinessNames>רמי לוי שיווק השיקמה,</BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>דלק</HebrewName>
+      <EnglishName>fuel</EnglishName>
+      <BusinessNames>דלק נעמן,</BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>אחר</HebrewName>
+      <EnglishName>others</EnglishName>
+      <BusinessNames>
+      </BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>בחוץ</HebrewName>
+      <EnglishName>outside</EnglishName>
+      <BusinessNames>
+      </BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>לאומית</HebrewName>
+      <EnglishName />
+      <BusinessNames>שב"ן - לאומית שרותי בריאו,</BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>בדיקה</HebrewName>
+      <EnglishName />
+      <BusinessNames />
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>בדיקה2</HebrewName>
+      <EnglishName />
+      <BusinessNames />
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>בדיק32</HebrewName>
+      <EnglishName />
+      <BusinessNames />
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>בדיקותככככ</HebrewName>
+      <EnglishName />
+      <BusinessNames />
+    </CategoryBusiness>
+  </CategoriesAndBusiness>
+</Features>
