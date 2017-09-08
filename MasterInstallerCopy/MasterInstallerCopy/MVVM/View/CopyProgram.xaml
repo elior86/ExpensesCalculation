@@ -1,0 +1,263 @@
+﻿<Window x:Class="MasterInstallerCopy.CopyProgram"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModel="clr-namespace:MasterInstallerCopy.MVVM.ViewModel"
+        xmlns:converters="clr-namespace:MasterInstallerCopy.Converters"
+        xmlns:behaviors="clr-namespace:MasterInstallerCopy.Behaviors"
+        xmlns:interactions="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="CopyProgram" Height="350" Width="525"
+        Name="copyProgramWindow"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="true">
+
+    <Window.DataContext>
+        <viewModel:CopyProgramViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MasterInstallerCopy;component/Resources/ProgressBarStyle.xaml" />
+                <ResourceDictionary Source="/MasterInstallerCopy;component/Resources/WatermarkTextboxStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:ValuestoListConverter x:Key="valuesToListConverter"/>
+            <converters:ValuesToButtonConverter x:Key="valuesToButtonConverter"/>
+            <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border CornerRadius="10,10,10,10" Padding="6" BorderBrush="Black" BorderThickness="1" >
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,3">
+                <GradientStop Color="#3BB2EA" Offset="0" />
+                <GradientStop Color="#EFF7FA" Offset="0.3" />
+            </LinearGradientBrush>
+        </Border.Background>
+        <interactions:Interaction.Behaviors>
+            <behaviors:DragBehavior />
+        </interactions:Interaction.Behaviors>
+
+        <Grid Name="CopyProgramGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" 
+                Grid.Column="4"
+                Content="X" />
+            <!--Click="close_program"-->
+            <Grid Grid.Row="1" Grid.ColumnSpan="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Source Path: "
+                           Grid.Row="0"
+                           Grid.Column="0" />
+                <TextBlock Text="Destination Path: "
+                           Grid.Row="1"
+                           Grid.Column="0" />
+                <TextBox Name="sourceTxtBx" 
+                         TextWrapping="Wrap" 
+                         Tag="Copy source path (example: ...\12.0\120.0.1021\Components)" 
+                         Grid.Row="0"
+                         Grid.Column="1"
+                         ToolTip="example: ...\12.0\120.0.1021\Components"
+                         ToolTipService.InitialShowDelay="0"
+                         Style="{StaticResource WatermarkedTextBox}"
+                         Text="{Binding Path=SourcePathText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Name="destinationTxtBx" 
+                         TextWrapping="Wrap" 
+                         Tag="Copy destination path (example: ...\MOI\Components)"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         ToolTip="example: ...\MOI\Components"
+                         ToolTipService.InitialShowDelay="0"
+                         Style="{StaticResource WatermarkedTextBox}"
+                         Text="{Binding Path=DestinationPathText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <Grid Name="WhatToCopyGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Content="Choose what to copy" Grid.Row="0"/>
+                    <CheckBox Name="mccChkBx" 
+                              Content="MCC" 
+                              Grid.Row="1" 
+                              Command="{Binding CheckBoxCommand}"
+                              CommandParameter="MCC"/>
+                    <CheckBox Name="mccLpChkBx" Content="MCC Language Pack" Grid.Row="2"/>
+                    <CheckBox Name="sysAdminChkBx" Content="SysAdmin" Grid.Row="3"/>
+                    <CheckBox Name="sysAdminLpChkBx" Content="SysAdmin Language Pack" Grid.Row="4"/>
+                </Grid>
+            </StackPanel>
+            <Button Name="copyBtn"
+                    Content="Copy Files"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Command="{Binding ButtonCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource valuesToListConverter}">
+                        <Binding ElementName="sourceTxtBx" Path="Text"/>
+                        <Binding ElementName="destinationTxtBx" Path="Text"/>
+                        <Binding ElementName="mccChkBx" Path="Content"/>
+                        <Binding ElementName="mccChkBx" Path="IsChecked"/>
+                        <Binding ElementName="mccLpChkBx" Path="Content"/>
+                        <Binding ElementName="mccLpChkBx" Path="IsChecked"/>
+                        <Binding ElementName="sysAdminChkBx" Path="Content"/>
+                        <Binding ElementName="sysAdminChkBx" Path="IsChecked"/>
+                        <Binding ElementName="sysAdminLpChkBx" Path="Content"/>
+                        <Binding ElementName="sysAdminLpChkBx" Path="IsChecked"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+                <Button.IsEnabled>
+                    <MultiBinding Converter="{StaticResource valuesToButtonConverter}">
+                        <Binding ElementName="sourceTxtBx" Path="Text"/>
+                        <Binding ElementName="destinationTxtBx" Path="Text"/>
+                        <Binding ElementName="mccChkBx" Path="IsChecked"/>
+                        <Binding ElementName="mccLpChkBx" Path="IsChecked"/>
+                        <Binding ElementName="sysAdminChkBx" Path="IsChecked"/>
+                        <Binding ElementName="sysAdminLpChkBx" Path="IsChecked"/>
+                    </MultiBinding>
+                </Button.IsEnabled>
+            </Button>
+
+            <Expander Name="expenderBtn"
+                      Grid.Row="2"
+                      Grid.Column="3" 
+                      VerticalAlignment="Center"
+                      ExpandDirection="Right"/>
+
+            <Popup Name="expenderPopup" 
+                   IsOpen="{Binding ElementName=expenderBtn, Path=IsExpanded}"
+                   Placement="Right"
+                   AllowsTransparency="True"
+                   PopupAnimation="Scroll">
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10,10,10,10" Padding="6">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,3">
+                            <GradientStop Color="#3BB2EA" Offset="0" />
+                            <GradientStop Color="#EFF7FA" Offset="0.3" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="popupTxtBlock" 
+                                   Height="300" 
+                                   Width="180"
+                                   Margin="10,10,10,10" 
+                                   TextWrapping="Wrap" 
+                                   Text="{Binding Path=PopUpStringText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                   VerticalAlignment="Top" >
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+            </Popup>
+
+            <ProgressBar Name="progBar"
+                         Grid.Row="3"
+                         Grid.ColumnSpan="4"
+                         Height="30"
+                         Margin="5"
+                         Minimum="0" 
+                         Maximum="100"
+                         Tag="{Binding ProBarTag}"
+                         TextBlock.FontWeight="Bold"
+                         Value="{Binding ProBarValue}"
+                         Style="{StaticResource ProgressBarStyle}"/>
+
+            <StackPanel Grid.Row="4" Grid.ColumnSpan="3">
+                <Grid Name="compoundsVersions">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Compund Name" Grid.Row="0" Grid.Column="0"/>
+                    <Label Content="Current Version" Grid.Row="0" Grid.Column="1"/>
+                    <Label Content="Latest Version" Grid.Row="0" Grid.Column="2"/>
+                    <TextBlock Text="MCC" 
+                               Grid.Row="1" 
+                               Visibility="{Binding ElementName=mccChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Text="MCC Language Pack" 
+                               Grid.Row="2" 
+                               Visibility="{Binding ElementName=mccLpChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Text="SysAdmin" 
+                               Grid.Row="3" 
+                               Visibility="{Binding ElementName=sysAdminChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Text="SysAdmin Language Pack" 
+                               Grid.Row="4" 
+                               Visibility="{Binding ElementName=sysAdminLpChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="MCCCurrentVersion" 
+                               Text="{Binding MCCCurrentVersionText}" 
+                               Grid.Row="1" 
+                               Grid.Column="1" 
+                               Visibility="{Binding ElementName=mccChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="MCCLPCurrentVersion" 
+                               Text="MCC Language Pack" 
+                               Grid.Row="2" 
+                               Grid.Column="1" 
+                               Visibility="{Binding ElementName=mccLpChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="SysAdminCurrentVersion" 
+                               Text="SysAdmin" 
+                               Grid.Row="3" 
+                               Grid.Column="1" 
+                               Visibility="{Binding ElementName=sysAdminChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="SysAdminLPCurrentVersion" 
+                               Text="SysAdmin Language Pack" 
+                               Grid.Row="4" 
+                               Grid.Column="1" 
+                               Visibility="{Binding ElementName=sysAdminLpChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="MCCLatestVersion" 
+                               Text="{Binding MCCLatestVersionText}" 
+                               Grid.Row="1" 
+                               Grid.Column="2" 
+                               Visibility="{Binding ElementName=mccChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="MCCLPLatestVersion" 
+                               Text="MCC Language Pack" 
+                               Grid.Row="2" 
+                               Grid.Column="2" 
+                               Visibility="{Binding ElementName=mccLpChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="SysAdminLatestVersion" 
+                               Text="SysAdmin" 
+                               Grid.Row="3" 
+                               Grid.Column="2" 
+                               Visibility="{Binding ElementName=sysAdminChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                    <TextBlock Name="SysAdminLPLatestVersion" 
+                               Text="SysAdmin Language Pack" 
+                               Grid.Row="4" 
+                               Grid.Column="2" 
+                               Visibility="{Binding ElementName=sysAdminLpChkBx, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
