@@ -140,11 +140,12 @@ namespace CalculationExpenses2.MVVM.ViewModel
                     {
                         if (tbSumAndDetail.Name == item.Category + "סכום")
                         {
-                            tbSumAndDetail.Text = (Convert.ToDouble(tbSumAndDetail.Text) + Convert.ToDouble(item.BillingAmount)).ToString();
+                            tbSumAndDetail.Text = tbSumAndDetail.Text == "0" ? ("= " + item.BillingAmount) : (tbSumAndDetail.Text + " + " + item.BillingAmount);
+                            tbSumAndDetail.Text = tbSumAndDetail.Text.Replace(",", "");
                         }
                         if (tbSumAndDetail.Name == item.Category + "פירוט")
                         {
-                            tbSumAndDetail.Text = tbSumAndDetail.Text + (tbSumAndDetail.Text == "" ? tbSumAndDetail.Text : ", ") + item.BusineesName + " - " + item.BillingAmount;
+                            tbSumAndDetail.Text = tbSumAndDetail.Text + (tbSumAndDetail.Text == "" ? tbSumAndDetail.Text : ", ") + item.BusineesName + " - " + item.BillingAmount + (item.Remarks != "" ? (" (" + item.Remarks + ")") : "");
                         }
                     }
                 }
@@ -195,9 +196,6 @@ namespace CalculationExpenses2.MVVM.ViewModel
 
             InitializeItems();
             mainWindow.GenerateControls();
-            //UIElementCollection tbsOfSumsAndDetails = mainWindow.GetAllControls();
-            //List<TextBox> tbSumsAndDetails = RemoveTextBlocks(tbsOfSumsAndDetails);
-            //ResetSumsAndTexts(tbSumsAndDetails);
         }
     }
 }

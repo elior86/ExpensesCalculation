@@ -27,3 +27,32 @@ C:\Users\ekeren\Documents\Visual Studio 2013\Projects\CalculationExpenses2\Calcu
 C:\Users\ekeren\Documents\Visual Studio 2013\Projects\CalculationExpenses2\CalculationExpenses2\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 C:\Users\ekeren\Documents\Visual Studio 2013\Projects\CalculationExpenses2\CalculationExpenses2\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\ekeren\Documents\Visual Studio 2013\Projects\CalculationExpenses2\CalculationExpenses2\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\ExpensesConfiguration.xml
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\CalculationExpenses2.exe.config
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\CalculationExpenses2.exe
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\CalculationExpenses2.pdb
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\System.Windows.Interactivity.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\System.Windows.Interactivity.xml
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2.csprojResolveAssemblyReference.cache
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\Resources\WatermarkTextboxStyle.baml
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\MVVM\View\MainWindow.g.cs
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\App.g.cs
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2_Content.g.cs
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2_MarkupCompile.cache
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2_MarkupCompile.lref
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\MVVM\View\MainWindow.baml
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2.g.resources
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2.Properties.Resources.resources
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2.csproj.GenerateResource.Cache
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2.exe
+C:\Projects\ExpensesCalculation-master\CalculationExpenses2\CalculationExpenses2\obj\Debug\CalculationExpenses2.pdb

@@ -59,8 +59,6 @@ namespace CalculationExpenses2
                 tbCategoryName.Text = categoriesAndBusiness.Keys.ElementAt(j);
                 tbCategoryName.Margin = new Thickness(10);
                 tbCategoryName.FontWeight = FontWeights.Bold;
-                tbCategoryName.HorizontalAlignment = HorizontalAlignment.Center;
-                tbCategoryName.VerticalAlignment = VerticalAlignment.Center;
                 Grid.SetRow(tbCategoryName, i+1+z);
                 Grid.SetColumn(tbCategoryName, 0);
                 this.CalculationsSumAndText.Children.Add(tbCategoryName);
@@ -79,7 +77,7 @@ namespace CalculationExpenses2
                 tbCategorySum.IsReadOnly = true;
                 tbCategorySum.Margin = new Thickness(10);
                 tbCategorySum.FontWeight = FontWeights.Bold;
-                tbCategorySum.HorizontalAlignment = HorizontalAlignment.Center;
+                tbCategorySum.HorizontalAlignment = HorizontalAlignment.Left;
                 tbCategorySum.VerticalAlignment = VerticalAlignment.Center;
                 tbCategorySum.FlowDirection = System.Windows.FlowDirection.RightToLeft;
                 tbCategorySum.MouseDoubleClick += TextBox_MouseDoubleClick;

@@ -5,7 +5,7 @@
         xmlns:converters="clr-namespace:CalculationExpenses2.Converters"
         xmlns:behaviors="clr-namespace:CalculationExpenses2.Behaviors"
         xmlns:interactions="http://schemas.microsoft.com/expression/2010/interactivity"
-        Title="MainWindow" Height="550" Width="1000" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="550" Width="1250" WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         WindowStyle="None"
         Background="Transparent"
@@ -203,7 +203,7 @@
                                 <TextBlock Name="categoryName" 
                                            Grid.Row="0" 
                                            Margin="10" 
-                                           TextWrapping="Wrap" 
+                                           FontFamily="David" FontWeight="Bold" FontStyle="Italic" FontSize="15"  
                                            HorizontalAlignment="Left"
                                            Text="שם קטגוריה"  >
                                 </TextBlock>

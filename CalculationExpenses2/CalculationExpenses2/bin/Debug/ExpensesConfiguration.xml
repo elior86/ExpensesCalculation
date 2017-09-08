@@ -17,30 +17,27 @@
     <CategoryBusiness>
       <HebrewName>הלבשה</HebrewName>
       <EnglishName>cloths</EnglishName>
-      <BusinessNames>
-      </BusinessNames>
+      <BusinessNames>גולף קידס נהריה,זארה - קניון קריון,אלדו קירון,הצעד הנכון,צ'או בלה - אינטימה,</BusinessNames>
     </CategoryBusiness>
     <CategoryBusiness>
       <HebrewName>אוכל</HebrewName>
       <EnglishName>food</EnglishName>
-      <BusinessNames>רמי לוי שיווק השיקמה,</BusinessNames>
+      <BusinessNames>רמי לוי שיווק השיקמה,מלך הגלידות,י. אסלאן שיווק בע"מ,סופר מרקט חוף הדקל,</BusinessNames>
     </CategoryBusiness>
     <CategoryBusiness>
       <HebrewName>דלק</HebrewName>
       <EnglishName>fuel</EnglishName>
-      <BusinessNames>דלק נעמן,</BusinessNames>
+      <BusinessNames>דלק נעמן,טן בית העמק,תחנת דלק חצות המפרץ,</BusinessNames>
     </CategoryBusiness>
     <CategoryBusiness>
       <HebrewName>אחר</HebrewName>
       <EnglishName>others</EnglishName>
-      <BusinessNames>
-      </BusinessNames>
+      <BusinessNames>סופרפארם נהריה געתון,גלובוס מקס קריון,סופר פארם נהריה רגבה,38 סופר פארם ח.המפרץ,גן לי שיווק בע"מ,פנגו- חניה סלולארית,המסלקה הפנסיונית,תחנת רכבת נהריה,תחנת רכבת קרית מוצקין,תחנת דלק - סער,סופרפארם קרית ביאליק,סופר פארם ארנה נהריה,אורנים המכללה האקדמי,רכבת נהריה,רובין שיווק והפצה,מליסרון בע"מ,חיון שלום,מונופול,</BusinessNames>
     </CategoryBusiness>
     <CategoryBusiness>
       <HebrewName>בחוץ</HebrewName>
       <EnglishName>outside</EnglishName>
-      <BusinessNames>
-      </BusinessNames>
+      <BusinessNames>איקאה מסעדה קריית את,יומנגוס תל חנן בע"מ,מקור הפנקייק ירכא בע,קפה לנדוור נהריה,אטליז מויאל,פיצה ורונה,הפרלמנט חומוס נהריה,ארומה נהריה,מאפה נאמן הקריון,שוק פייסל הגדול,פיצה דומינוס,פורנטו פיצה בר,שיפודי התקוה - חוצות,כפר הנפש תמרה בע"מ,ארומה אחי אילת,מינה טומיי קריון,ארזים מסעדה לבנונית,בי בי בי אחי אילת,שמונה רבמד,ארומה קריון,שניצל פלפלת גראנד קנ,אורבן קופיקס בע"מ,Impasto,רי באר קניון ארנה,פפאיה ביץ,</BusinessNames>
     </CategoryBusiness>
     <CategoryBusiness>
       <HebrewName>לאומית</HebrewName>
@@ -48,24 +45,39 @@
       <BusinessNames>שב"ן - לאומית שרותי בריאו,</BusinessNames>
     </CategoryBusiness>
     <CategoryBusiness>
-      <HebrewName>בדיקה</HebrewName>
+      <HebrewName>רכב</HebrewName>
+      <EnglishName />
+      <BusinessNames>בלוט מוטורס בע"מ,מוסך המרכז החדש בעמ,</BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>הלוואות</HebrewName>
       <EnglishName />
       <BusinessNames />
     </CategoryBusiness>
     <CategoryBusiness>
-      <HebrewName>בדיקה2</HebrewName>
+      <HebrewName>פלאפון</HebrewName>
+      <EnglishName />
+      <BusinessNames>טלזר 019,</BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>משכנתא</HebrewName>
       <EnglishName />
       <BusinessNames />
     </CategoryBusiness>
     <CategoryBusiness>
-      <HebrewName>בדיק32</HebrewName>
+      <HebrewName>ביטוחחייםודירה</HebrewName>
       <EnglishName />
-      <BusinessNames />
+      <BusinessNames>ביטוח חיים A I G,ביטוח דירה AIG,</BusinessNames>
     </CategoryBusiness>
     <CategoryBusiness>
-      <HebrewName>בדיקותככככ</HebrewName>
+      <HebrewName>מכבי</HebrewName>
       <EnglishName />
-      <BusinessNames />
+      <BusinessNames>מכבי דנט מרפ"ש קרית,</BusinessNames>
+    </CategoryBusiness>
+    <CategoryBusiness>
+      <HebrewName>שיפוץדירה</HebrewName>
+      <EnglishName />
+      <BusinessNames>היי ביז בע"מ,שיש אלוני לקוחות פרט,רשתות תאורה בע"מ-רגב,הום סנטרס סניף חיפה,</BusinessNames>
     </CategoryBusiness>
   </CategoriesAndBusiness>
 </Features>
